@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Tracker(Monthly)</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="financetracker.css" />
+  
+  </head>
+  <body> 
+    <!-- title -->
+    <div class="TitleHeader">Calculate your Monthly</div>
+  
+    <!-- month and year -->
+    <div class="header_container">
+       <div class="month">Month: <div class="month_label" ></div> </div>
+       <div class="year">Year:   <div class="year_label" ></div> </div>
+    </div>
+ 
+
+    <!-- monthy expenses income savings and summmarize -->
+    <div class="meiss_container">
+
+
+
+            
+     <div class="monthlyexpenses">
+
+
+      <div class="month_btncontainer">
+
+        <div class="monthlyexpenseslabel">Monthly  <br>Expenses</div>
+        <input type="button" class="btn_add"></input>
+
+      </div>
+
+       <div class="monthnameamount_container">
+           <!--  format -->
+           <!-- <div class="monthlyexpensesname_row">
+               <div class="monthlyexpenses_name">Name</div>
+               <div class="monthlyexpense_amount">Amount</div>
+           </div> -->
+
+
+
+         
+       </div>
+
+     </div>
+
+        <div  class="iss_container">
+          
+             <div class="income">Income(Fill in if applicable)
+
+                   <div class="incomebalance_label">Balance:
+                    <input type="number" class="incomebalance_text" >Month Income</div>
+
+
+                   <div class="incomedeposit_label">Deposit:
+                    <input type="number" class="incomedeposit_text" >Bank Deposit</div>
+                    
+                   <div class="incometotal_label">Total:     
+                    <div type="number" class="incometotal__text" >0</div></div>
+ 
+             </div>
+
+             <div class="savings"> Savings(If you have a bank)
+
+              <div class="savingsbalance_label">Balance:
+                <input type="number" class="savingsbalance_text" >Bank Balance</div>
+
+              <div class="savingsdeposit_label">Deposit:
+                <input type="number" class="savingsdeposit_text" >Deposit Balance</h6></div>
+
+              <div class="savingstotal_label">Total:
+                <div type="number" class="savingstotal__text">0</div></div>
+                
+             </div>
+
+
+
+             <div class="summmarize"> Summary
+
+              <div class="summmaryincome_label">Income:
+                <div type="number" class="summmaryincome_text" >0</div></div>
+
+              <div class="summmarysavings_label">Savings:
+                <div type="number" class="summmarysavings_text" >0</div></div>
+              
+              <div class="summmaryexpenses_label">Expenses:
+                <div type="number" class="summmaryexpenses_text" >0</div></div>
+
+              <div class="summmarytotal_label">Total:
+                <div type="number" class="summmarytotal__text">0</div></div>
+
+             </div>
+
+
+         </div>
+  </div>     
+
+ 
+  
+
+  </body>
+
+  <script src="financetracker.js"></script>
+</html>

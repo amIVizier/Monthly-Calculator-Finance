@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    background-color: rgb(160, 145, 168);
+    font-family: "Bookman Old Style", sans-serif;
+  }
+
+
+body{
+    }
+
+
+.TitleHeader{
+    width: 100%;
+    height: 80px;
+    background-color: red;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+
+
+.header_container{
+    width: 100%;
+    height: 80px;
+    background-color: blue;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+
+.month,.year{
+    width: 40%;
+    height: 80px;
+    padding: 1px;
+    display: flex;
+    font-size: 50px;
+
+}
+
+
+
+.month{
+    background-color: gray;
+
+}
+
+
+.year{
+    background-color: violet;
+}
+
+
+
+
+.meiss_container{
+    width: 100%;
+    height: 730px;
+    padding: 1px;
+    display: flex;
+    font-size: 50px;
+    background-color: rebeccapurple;    
+}
+
+.monthlyexpenses{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(129, 114, 127);
+
+}
+
+.month_btncontainer{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+.monthnameamount_container{
+
+  width: 100%;
+  height: 80%;
+  background-color: bisque;
+
+}
+
+
+.monthlyexpenseslabel{
+  height: 98%;
+  width: 86%;
+  background-color: aqua;
+  padding: 1px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.monthlyexpensesname_row{
+   width: 100%;
+   height: 35px;
+   background-color: aquamarine;
+   display: flex;
+   flex-direction: row;
+   font-size: x-large;
+ 
+}
+
+
+.monthlyexpenses_name,.monthlyexpense_amount{
+    width: 40%;
+    margin: 2px;
+    text-align: center;
+}
+
+.btn_add{
+    padding: 1px;
+    height: 95%;
+    width: 14%;
+    background-image: url('add-to-playlist.png');
+    background-size:130px;
+    background-repeat: no-repeat;
+    padding: 1px;
+    cursor: pointer;
+ 
+}
+
+.iss_container{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(145, 159, 185);
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.income,.savings,.summmarize{
+    
+    height: 35%;
+    width: 99%;
+    font-size: 40px;
+    text-align: center;
+
+}
+.income{
+    background-color: bisque;
+}
+
+
+
+
+
+.incomebalance_label,.incomedeposit_label,.incometotal_label{
+  text-align: left;
+  height: 26%;
+  background-color: red;
+  padding: 1px;
+  display: flex
+
+
+}
+
+.incomebalance_text,.incomedeposit_text,.incometotal__text{
+    height: 40px;
+}
+
+.savings{
+    
+    background-color: rgb(85, 84, 97);
+}
+
+.savingsbalance_label,.savingsdeposit_label,.savingstotal_label{
+    text-align: left;
+    height: 27%;
+    display: flex;
+  }
+
+.savingsbalance_text,.savingsdeposit_text,.savingstotal__text{
+    height: 40px;
+}
+
+
+
+
+.summmarize{
+
+    background-color: rgb(196, 255, 201);
+}
+
+.summmaryincome_label,.summmarysavings_label,.summmaryexpenses_label,.summmarytotal_label{
+    text-align: left;
+    height: 20%;
+    display: flex;
+
+  }
+
+.summmaryincome_text,.summmarysavings_text,.summmaryexpenses_text,.summmarytotal__text{
+    height: 35px;
+
+}
