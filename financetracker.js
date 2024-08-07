@@ -27,6 +27,12 @@ const expenseName = document.querySelector('.monthlyexpenses_name')
 
 
 
+// checking the input is string
+
+const isAlphabetic = function (str) {
+  return /^[a-zA-Z]+$/.test(str);
+}
+
 
 const updateTotalAll = function(){ 
   
@@ -73,32 +79,41 @@ addButtonExpense.addEventListener('click', function(e){
    e.preventDefault();
 
 
-  
-  const expensename = prompt('Name')
-  const amount = prompt('Amount')
-  
+  const expensename = prompt('Name');
+  const amount = Number(prompt('Amount'));
+
+  // console.log(typeof amount);
+  // console.log(typeof expensename);
 
 
-  const html =  `<div class="monthlyexpensesname_row">
+
+  if (isAlphabetic(expensename) === true  && isNaN(amount) === false  ) 
+    {
+
+      const html =  `<div class="monthlyexpensesname_row">
                     <div class="monthlyexpenses_name">${expensename}</div>
                     <div class="monthlyexpense_amount">${Number(amount)}</div>
                  </div>`
 
-  expensesAmount.push(Number(amount))
-  expenses.push(expensename)
-
-  const addExpenses = expensesAmount.reduce( (acc,value) => acc + value, 0);
-  savingsSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) - addExpenses;
-  expensesSummary.textContent = addExpenses;
-  totalSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) + addExpenses;
-
-  console.log(addExpenses);
+      expensesAmount.push(amount);
+      expenses.push(expensename);
 
 
-  containerExpenses.insertAdjacentHTML('beforeend', html);
+      const addExpenses = expensesAmount.reduce( (acc,value) => acc + value, 0);
+      savingsSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) - addExpenses;
+      expensesSummary.textContent = addExpenses;
+      totalSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) + addExpenses;
+
+
+      containerExpenses.insertAdjacentHTML('beforeend', html);
+
+  }else{
+
+    prompt('Invalid Input');
+}
+
 
   
-
 })
 
 
