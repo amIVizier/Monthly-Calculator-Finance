@@ -22,9 +22,17 @@ const incomeSummary = document.querySelector('.summmaryincome_text');
 const savingsSummary = document.querySelector('.summmarysavings_text'); 
 const expensesSummary = document.querySelector('.summmaryexpenses_text'); 
 const totalSummary = document.querySelector('.summmarytotal__text'); 
-const expenseAmount = document.querySelectorAll('.monthlyexpense_amount')
-const expenseName = document.querySelector('.monthlyexpenses_name')
+const expenseAmount = document.querySelectorAll('.monthlyexpense_amount');
+const expenseName = document.querySelector('.monthlyexpenses_name');
 
+
+
+
+
+
+//getting year and month
+month.textContent = `${yearmonth[monthNumber]}`;
+year.textContent = `${now.getFullYear()}`
 
 
 // checking the input is string
@@ -41,15 +49,16 @@ const updateTotalAll = function(){
    const monthSavings_Deposited = Number(savingsBalance.value) + Number(savingsDeposit.value);
    const totalIncome_Savings = monthIncome_Deposited + monthSavings_Deposited;
 
+    
+
    
 
     totalIncome.textContent = monthIncome_Deposited ;
     savingsTotal.textContent = monthSavings_Deposited ;  
+
     incomeSummary.textContent = totalIncome_Savings;
-    savingsSummary.textContent = totalIncome_Savings ;
+    savingsSummary.textContent = totalIncome_Savings - expensesSummary.textContent ;
     totalSummary.textContent = totalIncome_Savings;
-
-
 
 }
 
@@ -62,29 +71,11 @@ savingsDeposit.addEventListener('input', updateTotalAll);
 
 
 
-
-
-
- 
-//getting year and month
-
-month.textContent = `${yearmonth[monthNumber]}`;
-year.textContent = `${now.getFullYear()}`
-// console.log(now.getFullYear());
-
-
-
-addButtonExpense.addEventListener('click', function(e){
-  // containerExpenses.innerHTML = '';
+const montlyExpensestoSummary = function(e){
    e.preventDefault();
-
 
   const expensename = prompt('Name');
   const amount = Number(prompt('Amount'));
-
-  // console.log(typeof amount);
-  // console.log(typeof expensename);
-
 
 
   if (isAlphabetic(expensename) === true  && isNaN(amount) === false  ) 
@@ -98,23 +89,24 @@ addButtonExpense.addEventListener('click', function(e){
       expensesAmount.push(amount);
       expenses.push(expensename);
 
-
+    
       const addExpenses = expensesAmount.reduce( (acc,value) => acc + value, 0);
+      
       savingsSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) - addExpenses;
       expensesSummary.textContent = addExpenses;
       totalSummary.textContent = Number(monthIncome.value) + Number(monthDepositedInBank.value) + addExpenses;
 
 
       containerExpenses.insertAdjacentHTML('beforeend', html);
-
+     
   }else{
 
-    prompt('Invalid Input');
-}
+    alert('Invalid Input');
+
+}}
 
 
-  
-})
+addButtonExpense.addEventListener('click',montlyExpensestoSummary)
 
 
 
