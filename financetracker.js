@@ -28,8 +28,6 @@ const expenseName = document.querySelector('.monthlyexpenses_name');
 
 
 
-
-
 //getting year and month
 month.textContent = `${yearmonth[monthNumber]}`;
 year.textContent = `${now.getFullYear()}`
@@ -47,18 +45,16 @@ const updateTotalAll = function(){
     
    const monthIncome_Deposited = Number(monthIncome.value) + Number(monthDepositedInBank.value) 
    const monthSavings_Deposited = Number(savingsBalance.value) + Number(savingsDeposit.value);
-   const totalIncome_Savings = monthIncome_Deposited + monthSavings_Deposited;
+   const totalIncome_Savings = Number(monthIncome_Deposited) + Number(monthSavings_Deposited);
 
     
-
-   
-
+  
     totalIncome.textContent = monthIncome_Deposited ;
     savingsTotal.textContent = monthSavings_Deposited ;  
-
     incomeSummary.textContent = totalIncome_Savings;
-    savingsSummary.textContent = totalIncome_Savings - expensesSummary.textContent ;
-    totalSummary.textContent = totalIncome_Savings;
+    savingsSummary.textContent = totalIncome_Savings - Number(expensesSummary.textContent) ;
+    totalSummary.textContent = totalIncome_Savings + Number(expensesSummary.textContent) ;
+
 
 }
 
